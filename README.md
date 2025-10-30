@@ -10,7 +10,7 @@
 
 **A modern, full-stack product management application built with MERN stack featuring JWT authentication, responsive design, and real-time statistics.**
 
-[Live Demo](https://your-app.onrender.com) · [Report Bug](https://github.com/yourusername/your-repo/issues) · [Request Feature](https://github.com/yourusername/your-repo/issues)
+[Live Demo](https://product-manage-three.vercel.app/) · [Report Bug](https://github.com/rohitsolanki01/Product-Manage/issues) · [Request Feature](https://github.com/rohitsolanki01/Product-Manage/issues)
 
 </div>
 
