@@ -32,7 +32,7 @@ const Navbar = () => {
          
           <Link to="/" className="flex items-center flex-shrink-0" onClick={closeMobileMenu}>
             <span className={`text-base sm:text-xl md:text-2xl font-bold transition-colors ${isLandingPage ? 'text-gray-900' : 'text-blue-600'}`}>
-              🤖 <span className=" xs:inline">AI Product Manager</span>
+              🤖 <span className=" xs:inline">Product Manager</span>
             </span>
           </Link>
 
