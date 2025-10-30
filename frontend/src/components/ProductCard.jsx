@@ -1,4 +1,4 @@
-// Fully Responsive Product Card Component - Grid & List Views
+
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../utils/api';
@@ -29,15 +29,14 @@ const ProductCard = ({ product, onDelete, viewMode = 'grid' }) => {
     navigate('/product/edit', { state: { product } });
   };
 
-  // Grid View - Responsive for mobile, tablet, desktop
   if (viewMode === 'grid') {
     return (
       <div className="bg-white rounded-lg sm:rounded-xl lg:rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group transform hover:-translate-y-1">
-        {/* Header with gradient - Responsive height */}
+ 
         <div className="h-1 sm:h-1.5 lg:h-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
         
         <div className="p-4 sm:p-5 lg:p-6">
-          {/* Product Name & Status Badge */}
+ 
           <div className="flex items-start justify-between mb-2 sm:mb-3 gap-2">
             <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 group-hover:text-blue-600 transition line-clamp-2 flex-1 leading-snug">
               {product.name}
@@ -47,12 +46,11 @@ const ProductCard = ({ product, onDelete, viewMode = 'grid' }) => {
             </div>
           </div>
 
-          {/* Description - Responsive text and line clamp */}
           <p className="text-xs sm:text-sm lg:text-base text-gray-600 mb-3 sm:mb-4 line-clamp-2 sm:line-clamp-3 leading-relaxed">
             {product.description}
           </p>
 
-          {/* Price - Responsive sizing */}
+
           <div className="mb-3 sm:mb-4 pb-3 sm:pb-4 border-b border-gray-100">
             <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-600">
               ₹{product.price.toLocaleString()}
@@ -60,7 +58,6 @@ const ProductCard = ({ product, onDelete, viewMode = 'grid' }) => {
             <span className="text-gray-500 text-xs sm:text-sm ml-1 sm:ml-2">per unit</span>
           </div>
 
-          {/* Meta Information - Responsive icon and text */}
           <div className="flex items-center text-xs sm:text-sm text-gray-500 mb-3 sm:mb-4">
             <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -74,7 +71,6 @@ const ProductCard = ({ product, onDelete, viewMode = 'grid' }) => {
             </span>
           </div>
 
-          {/* Action Buttons - Responsive padding and text */}
           <div className="flex gap-2 sm:gap-3">
             <button
               onClick={handleEdit}
@@ -101,27 +97,26 @@ const ProductCard = ({ product, onDelete, viewMode = 'grid' }) => {
     );
   }
 
-  // List View - Fully responsive layout
   return (
     <div className="bg-white rounded-lg sm:rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
       <div className="p-3 sm:p-4 lg:p-6">
         <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
           
-          {/* Product Info */}
+       
           <div className="flex-1 min-w-0">
             <div className="flex items-start gap-2 sm:gap-4">
               <div className="flex-1 min-w-0">
-                {/* Product Name - Responsive sizing */}
+           
                 <h3 className="text-base sm:text-lg lg:text-xl font-bold text-gray-900 hover:text-blue-600 transition mb-1 sm:mb-2 line-clamp-1 sm:line-clamp-2">
                   {product.name}
                 </h3>
                 
-                {/* Description - Responsive line clamp */}
+           
                 <p className="text-xs sm:text-sm lg:text-base text-gray-600 line-clamp-2 sm:line-clamp-2 mb-2 sm:mb-3 leading-relaxed">
                   {product.description}
                 </p>
                 
-                {/* Meta Info - Responsive icon and text */}
+       
                 <div className="flex items-center text-xs sm:text-sm text-gray-500">
                   <svg className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -138,7 +133,6 @@ const ProductCard = ({ product, onDelete, viewMode = 'grid' }) => {
             </div>
           </div>
 
-          {/* Price - Responsive positioning and sizing */}
           <div className="text-left sm:text-right sm:min-w-[100px] md:min-w-[130px] lg:min-w-[150px] order-last sm:order-none">
             <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-blue-600 mb-0.5 sm:mb-1">
               ₹{product.price.toLocaleString()}
@@ -146,7 +140,7 @@ const ProductCard = ({ product, onDelete, viewMode = 'grid' }) => {
             <div className="text-xs sm:text-sm text-gray-500">per unit</div>
           </div>
 
-          {/* Actions - Stack on mobile, column on tablet+ */}
+ 
           <div className="flex xs:flex-row sm:flex-col gap-2 w-full sm:w-auto sm:min-w-[100px] lg:min-w-[120px]">
             <button
               onClick={handleEdit}

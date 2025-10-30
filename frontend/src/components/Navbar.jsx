@@ -1,4 +1,4 @@
-// Fully Responsive Navbar with Mobile Menu
+
 import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -19,7 +19,7 @@ const Navbar = () => {
 
   const isLandingPage = location.pathname === '/';
 
-  // Close mobile menu when clicking a link
+
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
   };
@@ -29,23 +29,21 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-14 sm:h-16">
           
-          {/* Logo - Responsive Text */}
+         
           <Link to="/" className="flex items-center flex-shrink-0" onClick={closeMobileMenu}>
             <span className={`text-base sm:text-xl md:text-2xl font-bold transition-colors ${isLandingPage ? 'text-gray-900' : 'text-blue-600'}`}>
-              🤖 <span className=" xs:inline">Product Manager</span>
+              🤖 <span className=" xs:inline">AI Product Manager</span>
             </span>
           </Link>
 
-          {/* Desktop Navigation - Hidden on mobile/tablet, shown on md+ */}
           <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
             {user ? (
               <>
-                {/* Welcome Message - Hide on smaller desktops */}
+             
                 <span className="text-gray-700 text-sm lg:text-base hidden lg:block">
                   Welcome, <span className="font-semibold">{user.name.split(' ')[0]}</span>
                 </span>
-                
-                {/* Dashboard Link */}
+            
                 <Link
                   to="/dashboard"
                   className="px-3 lg:px-4 py-2 text-blue-600 hover:text-blue-700 font-medium transition text-sm lg:text-base"
@@ -53,7 +51,7 @@ const Navbar = () => {
                   Dashboard
                 </Link>
                 
-                {/* Logout Button */}
+       
                 <button
                   onClick={handleLogout}
                   className="px-3 lg:px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition font-medium text-sm lg:text-base shadow-sm hover:shadow-md"
@@ -63,7 +61,7 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                {/* Login Link */}
+      
                 <Link
                   to="/login"
                   className={`px-3 lg:px-4 py-2 font-medium transition text-sm lg:text-base ${
@@ -73,7 +71,7 @@ const Navbar = () => {
                   Login
                 </Link>
                 
-                {/* Get Started Button */}
+     
                 <Link
                   to="/register"
                   className="px-3 lg:px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium text-sm lg:text-base shadow-sm hover:shadow-md"
@@ -84,7 +82,7 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Mobile Menu Button - Visible on mobile/tablet only */}
+ 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -92,12 +90,12 @@ const Navbar = () => {
             aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? (
-              // Close Icon
+        
               <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              // Hamburger Icon
+         
               <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
@@ -106,19 +104,18 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu Dropdown - Shown only when mobileMenuOpen is true */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-200 shadow-lg animate-slideDown">
           <div className="px-4 pt-2 pb-4 space-y-2">
             {user ? (
               <>
-                {/* User Welcome Message */}
+               
                 <div className="py-3 px-3 text-gray-700 text-sm border-b border-gray-200 bg-gray-50 rounded-lg">
                   <span className="block text-xs text-gray-500 mb-1">Logged in as</span>
                   <span className="font-semibold text-base">{user.name}</span>
                 </div>
                 
-                {/* Dashboard Link */}
+              
                 <Link
                   to="/dashboard"
                   onClick={closeMobileMenu}
@@ -130,7 +127,7 @@ const Navbar = () => {
                   Dashboard
                 </Link>
                 
-                {/* Logout Button */}
+         
                 <button
                   onClick={handleLogout}
                   className="w-full flex items-center py-3 px-3 text-red-600 hover:bg-red-50 rounded-lg font-medium transition-colors text-left"
@@ -143,7 +140,7 @@ const Navbar = () => {
               </>
             ) : (
               <>
-                {/* Login Link */}
+       
                 <Link
                   to="/login"
                   onClick={closeMobileMenu}
@@ -155,7 +152,7 @@ const Navbar = () => {
                   Login
                 </Link>
                 
-                {/* Get Started Button */}
+        
                 <Link
                   to="/register"
                   onClick={closeMobileMenu}
